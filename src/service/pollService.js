@@ -1,12 +1,10 @@
 import axios from "axios";
 
-const BACK_END_URL = 'http://localhost:5000';
-
 /**
  * Lista todas as enquetes
  */
 export function getPolls() {
-    return axios.get(`${BACK_END_URL}/poll`);
+    return axios.get(`${process.env.BACK_END_URL}/poll`);
 }
 
 
@@ -14,7 +12,7 @@ export function getPolls() {
  * Mostra o resultado de uma enquete
  */
 export function getPollResult(pollId) {
-    return axios.get(`${BACK_END_URL}/poll/${pollId}/result`);
+    return axios.get(`${process.env.BACK_END_URL}/poll/${pollId}/result`);
 }
 
 
@@ -22,5 +20,5 @@ export function getPollResult(pollId) {
  * Cria uma nova enquete
  */
 export function postPoll(body) {
-    return axios.post(`${BACK_END_URL}/poll`, body)
+    return axios.post(`${process.env.BACK_END_URL}/poll`, body)
 }
